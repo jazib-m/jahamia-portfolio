@@ -4,47 +4,52 @@ import './Projects.css';
 
 const projectsList = [
   {
-    title: 'SuggestBabyName',
+    title: 'SuggestBabyName Web',
     client: 'Consumer App',
     category: 'AI Naming Platform',
     tags: ['React', 'Next.js', 'AI API', 'Vercel'],
-    gradient: 'linear-gradient(135deg, #a855f7 0%, #6366f1 100%)',
+    image: '/projects/baby-name-web.jpg',
     url: 'https://suggestbabyname.com/'
   },
   {
-    title: 'AI Analytics Dashboard',
-    client: 'TechCorp Solutions',
-    category: 'AI & Data Science',
-    tags: ['Python', 'React', 'FastAPI', 'TensorFlow'],
-    gradient: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)'
+    title: 'Dummy Ticket Premium',
+    client: 'Travel Services',
+    category: 'Booking Platform',
+    tags: ['Angular 21', 'Tailwind CSS v4', 'Anime.js', 'TypeScript'],
+    image: '/projects/dummy-ticket.jpg',
+    url: ''
   },
   {
-    title: 'E-Commerce Engine',
-    client: 'RetailFlow Global',
-    category: 'SaaS Platforms',
-    tags: ['Next.js', 'PostgreSQL', 'GraphQL', 'Stripe'],
-    gradient: 'linear-gradient(135deg, #ec4899 0%, #be185d 100%)'
+    title: 'Building Management',
+    client: 'Enterprise Systems',
+    category: 'IoT & Real Estate',
+    tags: ['TypeScript', 'React', 'Dashboard', 'Analytics'],
+    image: '/projects/building.jpg',
+    url: ''
   },
   {
-    title: 'Wearable Sync App',
-    client: 'MediTrack Systems',
-    category: 'Mobile Application',
-    tags: ['React Native', 'Node.js', 'WebSockets', 'Bluetooth'],
-    gradient: 'linear-gradient(135deg, #10b981 0%, #047857 100%)'
+    title: 'Fleet Safety',
+    client: 'Transport Logistics',
+    category: 'Gamified Compliance',
+    tags: ['TypeScript', 'React Native', 'Gamification'],
+    image: '/projects/safety-demo.jpg',
+    url: ''
   },
   {
-    title: 'Cloud Optimization Toolkit',
-    client: 'InfraFlow Technologies',
-    category: 'DevOps & Systems',
-    tags: ['Go', 'Kubernetes', 'AWS', 'Terraform'],
-    gradient: 'linear-gradient(135deg, #f59e0b 0%, #b45309 100%)'
+    title: 'SuggestBabyName Mobile',
+    client: 'Consumer App',
+    category: 'Native Mobile App',
+    tags: ['Swift', 'Capacitor 6', 'iOS', 'Android'],
+    image: '/projects/baby-name-mobile.jpg',
+    url: ''
   },
   {
-    title: 'Decentralized Finance Portal',
-    client: 'PaySwift Network',
-    category: 'Web3 & Fintech',
-    tags: ['TypeScript', 'Solidity', 'Ethers.js', 'Vite'],
-    gradient: 'linear-gradient(135deg, #6366f1 0%, #4338ca 100%)'
+    title: 'The Law Dashboard',
+    client: 'LegalTech',
+    category: 'Case Management',
+    tags: ['TypeScript', 'React', 'SaaS', 'Legal'],
+    image: '/projects/the-law.jpg',
+    url: ''
   }
 ];
 
@@ -79,20 +84,27 @@ export default function Projects() {
         </div>
 
         <div className="projects-grid">
-          {projectsList.map((project, index) => (
-            <a 
-              key={index} 
-              href={project.url || '#'}
-              target={project.url ? '_blank' : '_self'}
-              rel="noreferrer"
-              className={`project-card fade-up-init ${visible ? 'fade-up-active' : ''}`}
-              style={{ transitionDelay: `${index * 100}ms` }}
-            >
+          {projectsList.map((project, index) => {
+            const CardWrapper = project.url ? 'a' : 'div';
+            return (
+              <CardWrapper
+                key={index} 
+                href={project.url || undefined}
+                target={project.url ? '_blank' : undefined}
+                rel={project.url ? 'noreferrer' : undefined}
+                className={`project-card fade-up-init ${visible ? 'fade-up-active' : ''}`}
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
               {/* Project Card Graphic / Mockup background */}
-              <div className="project-graphic" style={{ background: project.gradient }}>
-                <span className="project-client">{project.client}</span>
-                <div className="project-overlay">
-                  <span className="project-category-pill">{project.category}</span>
+              <div className="project-graphic">
+                {project.image && (
+                  <img src={project.image} alt={project.title} className="project-image" />
+                )}
+                <div className="project-graphic-content">
+                  <span className="project-client">{project.client}</span>
+                  <div className="project-overlay">
+                    <span className="project-category-pill">{project.category}</span>
+                  </div>
                 </div>
               </div>
 
@@ -100,7 +112,7 @@ export default function Projects() {
               <div className="project-info">
                 <h3 className="project-name">
                   {project.title}
-                  <ArrowUpRight size={18} className="project-link-icon" />
+                  {project.url && <ArrowUpRight size={18} className="project-link-icon" />}
                 </h3>
                 <div className="project-tags">
                   {project.tags.map((tag, tagIndex) => (
@@ -110,8 +122,9 @@ export default function Projects() {
                   ))}
                 </div>
               </div>
-            </a>
-          ))}
+              </CardWrapper>
+            );
+          })}
         </div>
       </div>
     </section>
