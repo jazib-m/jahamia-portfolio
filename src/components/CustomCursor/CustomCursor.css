@@ -1,0 +1,60 @@
+.custom-cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-foreground);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease, background-color 0.2s ease, width 0.2s ease, height 0.2s ease;
+  mix-blend-mode: difference;
+}
+
+.custom-cursor-circle {
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  transform: translate(-50%, -50%);
+  transition: width 0.3s var(--easing), height 0.3s var(--easing), border-color 0.3s var(--easing), background-color 0.3s var(--easing);
+  mix-blend-mode: difference;
+}
+
+.custom-cursor-dot.hidden,
+.custom-cursor-circle.hidden {
+  opacity: 0;
+}
+
+/* Hover States */
+.custom-cursor-circle.hovered {
+  width: 48px;
+  height: 48px;
+  border-color: var(--color-accent);
+  background-color: rgba(94, 106, 210, 0.1);
+}
+
+.custom-cursor-dot.hovered {
+  width: 4px;
+  height: 4px;
+  background-color: var(--color-accent);
+}
+
+/* Clicking States */
+.custom-cursor-circle.clicking {
+  width: 36px;
+  height: 36px;
+  background-color: rgba(94, 106, 210, 0.3);
+  border-color: var(--color-accent);
+}
+
+.custom-cursor-dot.clicking {
+  transform: scale(0.5) translate(-50%, -50%);
+}

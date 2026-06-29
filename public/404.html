@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page Not Found | Jahamia Tech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-deep: #020203;
+      --color-foreground: #EDEDEF;
+      --color-muted: #8A8F98;
+      --color-accent: #5E6AD2;
+      --color-border: rgba(255, 255, 255, 0.08);
+      --surface: rgba(255, 255, 255, 0.03);
+      --radius: 16px;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: var(--bg-deep);
+      color: var(--color-foreground);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+    /* Ambient Glow */
+    .glow {
+      position: absolute;
+      width: 40vw;
+      height: 40vw;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);
+      filter: blur(120px);
+      opacity: 0.15;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+    .content {
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      padding: 2rem;
+      max-width: 500px;
+    }
+    .code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8rem;
+      font-weight: 700;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--color-accent) 0%, #a78bfa 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    p {
+      color: var(--color-muted);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    a {
+      display: inline-block;
+      text-decoration: none;
+      color: var(--color-foreground);
+      background: var(--color-accent);
+      padding: 1rem 2rem;
+      border-radius: var(--radius);
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
+    }
+    a:hover {
+      background: #7c85e0;
+      box-shadow: 0 0 30px rgba(94, 106, 210, 0.3);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="content">
+    <div class="code">404</div>
+    <h1>Lost in Space</h1>
+    <p>The page you are looking for doesn't exist or has been moved to another coordinate.</p>
+    <a href="/">Go Back Home</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-deep);
+  z-index: var(--z-loader);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.6s var(--easing), opacity 0.6s var(--easing);
+}
+
+.loader-overlay.fade-out {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader-content {
+  width: 90%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.brand-text {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.title-row {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.loader-char {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: 2px;
+  display: inline-block;
+  transform: translateY(100%);
+  animation: slide-up-char 0.8s var(--easing) forwards;
+  color: var(--color-foreground);
+}
+
+.loader-char.accent-char {
+  color: var(--color-accent);
+}
+
+.subtitle-row {
+  overflow: hidden;
+  height: 24px;
+}
+
+.loader-subtitle {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--color-muted);
+  letter-spacing: 4px;
+  display: block;
+  transform: translateY(100%);
+  animation: slide-up-char 0.8s var(--easing) forwards;
+}
+
+.progress-container {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.progress-bar-track {
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-border);
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.progress-bar {
+  height: 2px;
+  background-color: var(--color-accent);
+  box-shadow: 0 0 12px var(--color-accent-glow);
+  width: 0%;
+  align-self: flex-start;
+  transition: width 0.1s linear;
+}
+
+.progress-text {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--color-muted);
+  letter-spacing: 2px;
+}
+
+@keyframes slide-up-char {
+  to {
+    transform: translateY(0);
+  }
+}

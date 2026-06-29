@@ -1,0 +1,129 @@
+.process-section {
+  background-color: var(--bg-deep);
+  position: relative;
+  z-index: 2;
+}
+
+.process-header {
+  margin-bottom: var(--space-16);
+}
+
+.process-timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-8) 0;
+}
+
+/* Vertical center line */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--color-border);
+  transform: translateX(-50%);
+}
+
+.timeline-step {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-12);
+  position: relative;
+  width: 100%;
+}
+
+.timeline-step:last-child {
+  margin-bottom: 0;
+}
+
+/* Timeline dot/circle */
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: var(--bg-deep);
+  border: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.timeline-step:hover .timeline-dot {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 16px var(--color-accent-glow);
+}
+
+.dot-number {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+.timeline-step:hover .dot-number {
+  color: var(--color-accent);
+}
+
+/* Content cards alternating side layout */
+.timeline-content {
+  width: 42%;
+  padding: var(--space-6);
+  border-radius: var(--radius);
+  position: relative;
+}
+
+/* Default state: odd steps on the left */
+.timeline-step:nth-child(odd) .timeline-content {
+  margin-right: auto;
+  text-align: right;
+}
+
+/* Even steps on the right */
+.timeline-step:nth-child(even) .timeline-content {
+  margin-left: auto;
+  text-align: left;
+}
+
+.step-title {
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  color: var(--color-foreground);
+  margin-bottom: var(--space-2);
+}
+
+.step-desc {
+  font-size: var(--fs-base);
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 26px;
+  }
+  
+  .timeline-dot {
+    left: 26px;
+    transform: translate(-50%, -50%);
+  }
+  
+  .timeline-content {
+    width: calc(100% - 70px);
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    text-align: left !important;
+  }
+  
+  .timeline-step {
+    margin-bottom: var(--space-8);
+  }
+}
