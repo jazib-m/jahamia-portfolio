@@ -8,7 +8,7 @@ const projectsList = [
     client: 'Consumer App',
     category: 'AI Naming Platform',
     tags: ['React', 'Next.js', 'AI API', 'Vercel'],
-    image: '/projects/baby-name-web.jpg',
+    image: '/projects/baby-name-web.webp',
     url: 'https://suggestbabyname.com/'
   },
   {
@@ -16,7 +16,7 @@ const projectsList = [
     client: 'Travel Services',
     category: 'Booking Platform',
     tags: ['Angular 21', 'Tailwind CSS v4', 'Anime.js', 'TypeScript'],
-    image: '/projects/dummy-ticket.jpg',
+    image: '/projects/dummy-ticket.webp',
     url: ''
   },
   {
@@ -24,7 +24,7 @@ const projectsList = [
     client: 'Enterprise Systems',
     category: 'IoT & Real Estate',
     tags: ['TypeScript', 'React', 'Dashboard', 'Analytics'],
-    image: '/projects/building.jpg',
+    image: '/projects/building.webp',
     url: ''
   },
   {
@@ -32,7 +32,7 @@ const projectsList = [
     client: 'Transport Logistics',
     category: 'Gamified Compliance',
     tags: ['TypeScript', 'React Native', 'Gamification'],
-    image: '/projects/safety-demo.jpg',
+    image: '/projects/safety-demo.webp',
     url: ''
   },
   {
@@ -40,7 +40,7 @@ const projectsList = [
     client: 'Consumer App',
     category: 'Native Mobile App',
     tags: ['Swift', 'Capacitor 6', 'iOS', 'Android'],
-    image: '/projects/baby-name-mobile.jpg',
+    image: '/projects/baby-name-mobile.webp',
     url: ''
   },
   {
@@ -48,7 +48,7 @@ const projectsList = [
     client: 'LegalTech',
     category: 'Case Management',
     tags: ['TypeScript', 'React', 'SaaS', 'Legal'],
-    image: '/projects/the-law.jpg',
+    image: '/projects/the-law.webp',
     url: ''
   }
 ];
