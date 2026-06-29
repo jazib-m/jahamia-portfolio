@@ -4,6 +4,14 @@ import './Projects.css';
 
 const projectsList = [
   {
+    title: 'SuggestBabyName',
+    client: 'Consumer App',
+    category: 'AI Naming Platform',
+    tags: ['React', 'Next.js', 'AI API', 'Vercel'],
+    gradient: 'linear-gradient(135deg, #a855f7 0%, #6366f1 100%)',
+    url: 'https://suggestbabyname.com/'
+  },
+  {
     title: 'AI Analytics Dashboard',
     client: 'TechCorp Solutions',
     category: 'AI & Data Science',
@@ -37,13 +45,6 @@ const projectsList = [
     category: 'Web3 & Fintech',
     tags: ['TypeScript', 'Solidity', 'Ethers.js', 'Vite'],
     gradient: 'linear-gradient(135deg, #6366f1 0%, #4338ca 100%)'
-  },
-  {
-    title: 'Smart Automation Panel',
-    client: 'AutomateX Labs',
-    category: 'IoT & Systems',
-    tags: ['C++', 'React', 'MQTT', 'Docker'],
-    gradient: 'linear-gradient(135deg, #14b8a6 0%, #0f766e 100%)'
   }
 ];
 
@@ -79,8 +80,11 @@ export default function Projects() {
 
         <div className="projects-grid">
           {projectsList.map((project, index) => (
-            <div 
+            <a 
               key={index} 
+              href={project.url || '#'}
+              target={project.url ? '_blank' : '_self'}
+              rel="noreferrer"
               className={`project-card fade-up-init ${visible ? 'fade-up-active' : ''}`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
@@ -106,7 +110,7 @@ export default function Projects() {
                   ))}
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
